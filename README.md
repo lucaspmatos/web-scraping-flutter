@@ -1,6 +1,6 @@
-# web_scraping_flutter
+# Web Scraping Flutter
 
-A new Flutter project.
+A small application to explore the web scraping technique in Flutter
 
 ## Getting Started
 
