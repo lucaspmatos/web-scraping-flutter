@@ -3,7 +3,7 @@ import 'package:html/parser.dart' as parser;
 import 'package:http/http.dart' as http;
 
 import 'package:web_scraping_flutter/core/constants/strings.dart';
-import 'package:web_scraping_flutter/core/components/main_button.dart';
+import 'package:web_scraping_flutter/core/components/components.dart';
 
 class WebScrapingApp extends StatefulWidget {
   const WebScrapingApp({Key? key}) : super(key: key);
@@ -42,33 +42,15 @@ class _WebScrapingAppState extends State<WebScrapingApp> {
                   ? const CircularProgressIndicator()
                   : Column(
                       children: [
-                        Text(
-                          firstResult,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        ResultText(firstResult),
                         SizedBox(
                           height: screenHeight * 0.05,
                         ),
-                        Text(
-                          secondResult,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        ResultText(secondResult),
                         SizedBox(
                           height: screenHeight * 0.05,
                         ),
-                        Text(
-                          thirdResult,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        ResultText(thirdResult),
                       ],
                     ),
               SizedBox(
