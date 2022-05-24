@@ -23,8 +23,6 @@ class _WebScrapingAppState extends State<WebScrapingApp> {
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -43,19 +41,13 @@ class _WebScrapingAppState extends State<WebScrapingApp> {
                   : Column(
                       children: [
                         ResultText(firstResult),
-                        SizedBox(
-                          height: screenHeight * 0.05,
-                        ),
+                        WidgetSpacer.vertical(5),
                         ResultText(secondResult),
-                        SizedBox(
-                          height: screenHeight * 0.05,
-                        ),
+                        WidgetSpacer.vertical(5),
                         ResultText(thirdResult),
                       ],
                     ),
-              SizedBox(
-                height: screenHeight * 0.08,
-              ),
+              WidgetSpacer.vertical(10),
               MainButton(
                 onPressed: () => _pressButton(),
               ),
