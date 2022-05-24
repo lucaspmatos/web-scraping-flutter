@@ -114,29 +114,23 @@ Future<List<String>> _extractData() async {
       // Scraping the first article title
       var firstResponse = document
           .getElementsByClassName('articles-list')[0]
-          .children[0]
+          .children[4]
           .children[0]
           .children[0];
-
-      print(firstResponse.text.trim());
 
       // Scraping the second article title
       var secondResponse = document
           .getElementsByClassName('articles-list')[0]
-          .children[1]
+          .children[5]
           .children[0]
           .children[0];
-
-      print(secondResponse.text.trim());
 
       // Scraping the third article title
       var thirdResponse = document
           .getElementsByClassName('articles-list')[0]
-          .children[2]
+          .children[6]
           .children[0]
           .children[0];
-
-      print(thirdResponse.text.trim());
 
       return [
         firstResponse.text.trim(),
