@@ -13,12 +13,12 @@ class WebScrapingApp extends StatefulWidget {
 }
 
 class _WebScrapingAppState extends State<WebScrapingApp> {
-// strings to store the extracted article titles
+// Strings to store the extracted article titles
   String firstResult = '1st result';
   String secondResult = '2st result';
   String thirdResult = '3st result';
 
-// boolean to show CircularProgressIndication while Web Scraping awaits
+// Boolean to show CircularProgressIndication while Web Scraping awaits
   bool isLoading = false;
 
   @override
@@ -30,15 +30,28 @@ class _WebScrapingAppState extends State<WebScrapingApp> {
         ),
         backgroundColor: Colors.deepPurple,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              isLoading
-                  ? const CircularProgressIndicator()
-                  : Column(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            isLoading
+                ? const CircularProgressIndicator()
+                : Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(25),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    margin: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
                       children: [
                         ResultText(firstResult),
                         WidgetSpacer.vertical(5),
@@ -47,12 +60,12 @@ class _WebScrapingAppState extends State<WebScrapingApp> {
                         ResultText(thirdResult),
                       ],
                     ),
-              WidgetSpacer.vertical(10),
-              MainButton(
-                onPressed: () => _pressButton(),
-              ),
-            ],
-          ),
+                  ),
+            WidgetSpacer.vertical(8),
+            MainButton(
+              onPressed: () => _pressButton(),
+            ),
+          ],
         ),
       ),
     );
